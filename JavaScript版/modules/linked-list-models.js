@@ -8,3 +8,10 @@ export class Nodes{
 export function defaultEquals(a,b){
     return a === b;
 }
+
+export class DoubleNodes extends Nodes {
+    constructor(element) {
+        super(element);
+        this.prev = undefined;
+    }
+}

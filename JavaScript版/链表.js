@@ -1,6 +1,6 @@
 import { Nodes, defaultEquals } from './modules/linked-list-models.js';
 
-class LinkedList {
+ export default class LinkedList {
     constructor(equalsFn = defaultEquals) {
         this.count = 0;
         this.head = undefined;
@@ -120,6 +120,11 @@ class LinkedList {
         return this.head
     }
 
+    clear(){
+        this.count = 0;
+        this.head = undefined;
+    }
+
     //转换成字符串输出
     toString() {
         if (this.isEmpty()) return undefined;
@@ -146,7 +151,7 @@ class LinkedList {
 // console.log(linkedlist.remove("666"));
 // console.log(linkedlist.indexOf("666"));
 
-console.log(linkedlist.toString());
+// console.log(linkedlist.toString());
 
 
 
