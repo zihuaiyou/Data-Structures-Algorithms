@@ -35,13 +35,13 @@ export default class SearchTree extends TraversalTree {
     }
 
     searchNode(node, key) {
-        if (node == null) return false;
+        if (node == null) return undefined;
         if (this.compareFn(key, node.key) === Compare.LESS_THAN) {
             return this.searchNode(node.left, key);
         } else if (this.compareFn(key, node.key) === Compare.BIG_THAN) {
             return this.searchNode(node.right, key);
         } else {
-            return true;
+            return node;
         }
     }
 
@@ -87,30 +87,30 @@ export default class SearchTree extends TraversalTree {
     }
 }
 
-let searchTree = new SearchTree();
-searchTree.insert(11);
-searchTree.insert(7);
-searchTree.insert(15);
-searchTree.insert(5);
-searchTree.insert(3);
-searchTree.insert(6);
-searchTree.insert(9);
-searchTree.insert(8);
-searchTree.insert(10);
-searchTree.insert(13);
-searchTree.insert(12);
-searchTree.insert(14);
-searchTree.insert(20);
-searchTree.insert(18);
-searchTree.insert(25);
+// let searchTree = new SearchTree();
+// searchTree.insert(11);
+// searchTree.insert(7);
+// searchTree.insert(15);
+// searchTree.insert(5);
+// searchTree.insert(3);
+// searchTree.insert(6);
+// searchTree.insert(9);
+// searchTree.insert(8);
+// searchTree.insert(10);
+// searchTree.insert(13);
+// searchTree.insert(12);
+// searchTree.insert(14);
+// searchTree.insert(20);
+// searchTree.insert(18);
+// searchTree.insert(25);
 // console.log(searchTree.min());
 // console.log(searchTree.max());
 
-searchTree.remove(10);
-console.log(searchTree.search(10));
-searchTree.postOrderTraverse((value) => {
-    console.log(value.key);
-});
+// searchTree.remove(10);
+// console.log(searchTree.search(10));
+// searchTree.postOrderTraverse((value) => {
+//     console.log(value.key);
+// });
 
 
 
