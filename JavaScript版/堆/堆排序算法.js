@@ -7,9 +7,9 @@ import {
 
 function heapify(array, index, size, compareFn) {
   let element = index;
-
   let left = index * 2 + 1;
   let right = index * 2 + 2;
+  //   if (left < size && right < size) {
   if (
     left < size &&
     compareFn(array[element], array[left]) === Compare.LESS_THAN
@@ -22,16 +22,16 @@ function heapify(array, index, size, compareFn) {
   ) {
     element = right;
   }
-        
+
   if (index !== element) {
     swap(array, index, element);
-     index = element;
+    index = element;
     heapify(array, index, size, compareFn);
   }
 }
 
 function buildMaxHeap(array, compareFn) {
-  for (let i = Math.floor(array.length/2); i >= 0; i-=1) {
+  for (let i = Math.floor(array.length / 2); i >= 0; i -= 1) {
     heapify(array, i, array.length, compareFn);
   }
   return array;
@@ -47,7 +47,5 @@ function heapSort(array, compareFn = defaultCompares) {
   return array;
 }
 
-let arr = [6, 7, 3, 5, 4, 1, 2];
+let arr = [7, 6, 3, 5, 4, 1, 2];
 console.log(heapSort(arr));
-
-

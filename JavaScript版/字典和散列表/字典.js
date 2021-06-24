@@ -1,4 +1,4 @@
-import defaultToString, { ValuePair } from '../modules/util.js'
+   import defaultToString, { ValuePair } from '../modules/util.js'
 export default class Dictionary {
     constructor(toStrFn = defaultToString) {
         this.toStrFn = toStrFn;
@@ -70,12 +70,12 @@ export default class Dictionary {
     }
 }
 
-let dictionary = new Dictionary();
-dictionary.set(1,"Bob");
-dictionary.set(2,"Jack");
-dictionary.set(3,"Tom");
+// let dictionary = new Dictionary();
+// dictionary.set(1,"Bob");
+// dictionary.set(2,"Jack");
+// dictionary.set(3,"Tom");
 
-console.log(dictionary.get(1));
+// console.log(dictionary.get(1));
  
 
-console.log(dictionary.toString());
+// console.log(dictionary.toString());
