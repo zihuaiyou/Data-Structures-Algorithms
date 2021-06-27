@@ -73,5 +73,7 @@ graph.addEdge("C","G");
 graph.addEdge("D","H");
 graph.addEdge("D","G");
 
+// console.log(graph.adjList.get("C"));
+
 // console.log(graph.toString());
  

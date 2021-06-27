@@ -1,4 +1,4 @@
-class Stack {
+export default class Stack {
   constructor() {
     this.count = 0;
     this.items = {};
@@ -11,8 +11,10 @@ class Stack {
   //删除栈顶元素
   pop() {
     if (this.isEmpty()) return undefined;
-    delete this.items[this.count - 1];
+    let value = this.items[this.count - 1];
+    this.items[this.count - 1] = null;
     this.count--;
+    return value;
   }
   //判断栈是否为空
   isEmpty() {
@@ -42,10 +44,10 @@ class Stack {
   }
 }
 
-let stack = new Stack();
-stack.push("hello");
-stack.push("world");
-stack.push("everyone")
-stack.pop();
-console.log(stack.toString());
-console.log(stack.size());
+// let stack = new Stack();
+// stack.push("hello");
+// stack.push("world");
+// stack.push("everyone")
+// stack.pop();
+// console.log(stack.toString());
+// console.log(stack.size());
