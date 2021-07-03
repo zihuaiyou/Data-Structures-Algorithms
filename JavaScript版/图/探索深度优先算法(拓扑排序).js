@@ -62,7 +62,7 @@ graph.addEdge("F", "E");
 // console.log(DFS(graph));
 let result = DFS(graph);
 
-//拓扑排序
+//拓扑排序(确定一些任务的执行顺序)
 function topoSort(dfsGraph, graphArr) {
   const fTimes = dfsGraph.finished;
   let s = "";
