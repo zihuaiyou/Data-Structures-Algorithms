@@ -3,7 +3,7 @@
 
 import { Compare, defaultCompares, swap } from "../modules/sort-models.js";
 
-function quickSort(array, compareFn = defaultCompares) {
+export default  function quickSort(array, compareFn = defaultCompares) {
   return quick(array, 0, array.length - 1, compareFn);
 }
 

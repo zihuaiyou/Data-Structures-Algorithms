@@ -1,4 +1,5 @@
-import Compare, {
+import {
+  Compare,
   Nodes,
   defaultEquals,
   defaultCompares,
@@ -8,11 +9,11 @@ import LinkedList from "./链表.js";
 export default class SortedLinkedList extends LinkedList {
   constructor(equalsFn = defaultEquals, comparesFn) {
     super(equalsFn);
-    this.comparesFn = defaultCompares;   
+    this.comparesFn = defaultCompares;
   }
 
   //有序插入元素
-  insert(element,index = 0) {
+  insert(element, index = 0) {
     //链表元素为空时,从头插入
     if (this.isEmpty()) return super.insert(0, element);
     //当链表元素不为空时，从指定位置插入
@@ -26,7 +27,7 @@ export default class SortedLinkedList extends LinkedList {
     let current = this.head;
     for (i = 0; i < this.count && current; i++) {
       if (this.comparesFn(element, current.element) === Compare.LESS_THAN) {
-          return i;
+        return i;
       }
       current = current.next;
     }
@@ -41,4 +42,3 @@ sortedLinkedList.insert(18);
 console.log(sortedLinkedList);
 
 console.log(sortedLinkedList.toString());
- 
